@@ -1,6 +1,8 @@
 package com.example.demo.Services;
 
 import com.example.demo.Entity.Book;
+import com.example.demo.Exceptions.NullValue;
+import com.example.demo.Exceptions.ProductNotFound;
 import com.example.demo.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,7 @@ public class BookService {
     public Book getbyid(int id) {
         Optional<Book> book1=bookRepository.findById(id);
         if(book1.isEmpty()){
-            return null;
+            throw new NullValue("Null value Exception");
         }
         else return book1.get();
     }
@@ -36,14 +38,14 @@ public class BookService {
             return "deleted successfully";
         }
         catch (Exception ex){
-            return "wrong";
+            throw new ProductNotFound("Product Not found Exception");
         }
     }
 
     public String updatebyid(Book book1) {
         Optional<Book> book2=bookRepository.findById(book1.getId());
         if(book2.isEmpty()) {
-            return "wrong";
+            throw new ProductNotFound("Product Not found Exception");
         }
         else{
             book2.get().setId(book1.getId());

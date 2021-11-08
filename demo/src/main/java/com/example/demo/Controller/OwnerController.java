@@ -25,7 +25,7 @@ public class OwnerController {
 
         Product product = new Product(m1);
 
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_no");
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_id");
         FilterProvider filters = new SimpleFilterProvider().addFilter("productfilter", filter);
         MappingJacksonValue mapping = new MappingJacksonValue(product);
 
@@ -43,7 +43,7 @@ public class OwnerController {
         }
 
 
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_no");
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_id");
         FilterProvider filters = new SimpleFilterProvider().addFilter("productfilter", filter);
         MappingJacksonValue mapping = new MappingJacksonValue(products);
 
@@ -56,7 +56,7 @@ public class OwnerController {
         Book b1 = bookService.postbook(book);
         Product product = new Product(b1);
 
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_no");
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_id");
         FilterProvider filters = new SimpleFilterProvider().addFilter("productfilter", filter);
         MappingJacksonValue mapping = new MappingJacksonValue(product);
 
@@ -70,7 +70,7 @@ public class OwnerController {
         String m1 = bookService.deletebyid(id);
 
 
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_no");
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_id");
         FilterProvider filters = new SimpleFilterProvider().addFilter("productfilter", filter);
         MappingJacksonValue mapping = new MappingJacksonValue(m1);
 
@@ -82,7 +82,7 @@ public class OwnerController {
     public MappingJacksonValue updatebyidowner(@RequestBody Book book) {
         String m2 = bookService.updatebyid(book);
 
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_no");
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("name", "brand", "category", "price", "reg_no", "manu_id");
         FilterProvider filters = new SimpleFilterProvider().addFilter("productfilter", filter);
         MappingJacksonValue mapping = new MappingJacksonValue(m2);
 
