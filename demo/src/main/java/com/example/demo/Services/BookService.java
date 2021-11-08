@@ -47,11 +47,13 @@ public class BookService {
         }
         else{
             book2.get().setId(book1.getId());
+            book2.get().setName(book1.getName());
             book2.get().setBrand(book1.getBrand());
             book2.get().setCategory(book1.getCategory());
             book2.get().setManu_id(book1.getManu_id());
             book2.get().setReg_no(book1.getReg_no());
             book2.get().setPrice(book1.getPrice());
+            bookRepository.save(book2.get());
             return "updated successfully";
         }
     }

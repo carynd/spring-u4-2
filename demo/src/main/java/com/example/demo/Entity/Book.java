@@ -10,6 +10,7 @@ public class Book {
     @Id
     private int id;
     private int price;
+    private String name;
     private String brand;
     private String category;
     private String reg_no;
@@ -75,4 +76,12 @@ public class Book {
 		registration_number: "2gh856",
 		manufacturer_id: "MAN254
      */
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

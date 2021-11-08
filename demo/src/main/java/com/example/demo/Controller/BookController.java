@@ -34,7 +34,7 @@ public class BookController {
         String message1=bookService.deletebyid(id);
         return message1;
     }
-    @PutMapping("/product/{id}")
+    @PutMapping("/product")
     public String updatebyid(@RequestBody Book book1){
         String message1=bookService.updatebyid(book1);
         return message1;
