@@ -21,7 +21,7 @@ public class CustomerController {
     BookService bookService;
 
 
-    @GetMapping("/products/customer/{id}")
+    @GetMapping("/product/customer/{id}")
     public MappingJacksonValue getallbookbyidcustomer(@PathVariable("id") int id){
         Book m1=bookService.getbyid(id);
 

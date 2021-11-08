@@ -19,7 +19,7 @@ public class OwnerController {
     BookService bookService;
 
 
-    @GetMapping("/products/owner/{id}")
+    @GetMapping("/product/owner/{id}")
     public MappingJacksonValue getallbookbyidowner(@PathVariable("id") int id) {
         Book m1 = bookService.getbyid(id);
 
