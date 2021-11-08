@@ -46,7 +46,13 @@ public class BookService {
             return "wrong";
         }
         else{
-            book2.get().setId(book2.get().getId());
+            book2.get().setId(book1.getId());
+            book2.get().setBrand(book1.getBrand());
+            book2.get().setCategory(book1.getCategory());
+            book2.get().setManu_id(book1.getManu_id());
+            book2.get().setReg_no(book1.getReg_no());
+            book2.get().setPrice(book1.getPrice());
+            return "updated successfully";
         }
     }
 
