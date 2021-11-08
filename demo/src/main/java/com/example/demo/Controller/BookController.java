@@ -3,8 +3,7 @@ package com.example.demo.Controller;
 import com.example.demo.Entity.Book;
 import com.example.demo.Services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,4 +18,26 @@ public class BookController {
         List <Book> booklistdata=bookService.getallbooks();
         return booklistdata;
     }
+    @GetMapping("/product/{id}")
+    public Book getbyid(@PathVariable("id") int id){
+        Book book=bookService.getbyid(id);
+        return book;
+    }
+    @PostMapping("/product")
+    public Book postbook(@RequestBody Book book){
+        Book bookadded=bookService.postbook(book);
+        return bookadded;
+    }
+
+    @DeleteMapping("/product/{id}")
+    public String deletebyid(@PathVariable("id") int id){
+        String message1=bookService.deletebyid(id);
+        return message1;
+    }
+    @PutMapping("/product/{id}")
+    public String updatebyid(@RequestBody Book book1){
+        String message1=bookService.updatebyid(book1);
+        return message1;
+    }
+
 }
